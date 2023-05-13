@@ -32,38 +32,17 @@ roman = {
     'M':1000   
 }
 
-# function to add and return the final number 
-def sumNumber(a,b):
-    output = a+b
-    return output
-
-# function to sub and return the final number
-def diff(a,b):
-    output = abs(a-b)
-    return output 
-
-def mul(a):
-    output = a*2
-    return output
-
 # function to check the position and call the functions based upon the conditions  
 def checkPos(list1):
     result = 0
     # for loop through the list 
     for pos in range(len(list1)-1):
         if list1[pos]>list1[pos+1]:
-            result += sumNumber(list1[pos],list1[pos+1])
+            result = list1[pos]+list1[pos+1]           
         elif list1[pos]<list1[pos+1]:
-            result += diff(list1[pos],list1[pos+1])
-        elif list1[pos]==list1[pos+1] and len(list1)==2:
-            if list1[0]==1:
-                result = 1
-            result = sumNumber(result,list1[pos])
+            result = list1[pos]-list1[pos+1]
         elif list1[pos]==list1[pos+1]:
-            if list1[0]==1:
-                result += sumNumber(result,list1[pos])
-            else:
-                result = sumNumber(result,list1[pos])     
+            result = list1[pos]+list1[pos+1]
     return result
 
 # a function to count the total splited
