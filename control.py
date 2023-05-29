@@ -22,3 +22,4 @@ num = 0
 d = (sorted(l1,reverse = True))
 for i in d:
     oo = len(d) 
+print(oo)

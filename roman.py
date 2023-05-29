@@ -32,50 +32,24 @@ roman = {
     'M':1000   
 }
 
-# function to add and return the final number 
-def sumNumber(a,b):
-    output = a+b
-    return output
-
-# function to sub and return the final number
-def diff(a,b):
-    output = abs(a-b)
-    return output 
-
-def mul(a):
-    output = a*2
-    return output
-
-# function to check the position and call the functions based upon the conditions  
-def checkPos(list1):
-    result = 0
-    # for loop through the list 
-    for pos in range(len(list1)-1):
-        if list1[pos]>list1[pos+1]:
-            result += sumNumber(list1[pos],list1[pos+1])
-        elif list1[pos]<list1[pos+1]:
-            result += diff(list1[pos],list1[pos+1])
-        elif list1[pos]==list1[pos+1] and len(list1)==2:
-            if list1[0]==1:
-                result = 1
-            result = sumNumber(result,list1[pos])
-        elif list1[pos]==list1[pos+1]:
-            if list1[0]==1:
-                result += sumNumber(result,list1[pos])
-            else:
-                result = sumNumber(result,list1[pos])     
-    return result
-
 # a function to count the total splited
 def count(splited):
-    list1 = []
-    for str in splited:
-        list1.append(roman[str])
-    if len(list1) == 1:
-        result = list1[0]
-        return result   
-    result = checkPos(list1)
-    return result
+    result = roman[splited[0]]
+    if len(splited) == 2:
+        if result < roman[splited[1]]:
+            result -= roman[splited[1]]
+            result=abs(result)
+        else:
+            result += roman[splited[1]]
+    else:
+        for i in range(1,len(splited)-1):
+            if splited[i] > splited[i+1] or splited[i] == splited[i+1]:
+                result += (roman[splited[i]])
+            elif splited[i] < splited[i+1]:
+                result += roman[splited[i+1]] - roman[splited[i]]
+        if len(splited) % 2 ==0:
+            result-=1
+    return result    
 
 # input function
 def inputSplit(romanInput):

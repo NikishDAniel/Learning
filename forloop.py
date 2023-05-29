@@ -32,7 +32,7 @@ print(string1[3])
 for i in string1:
     print(i)'''
 string1 = "1221"
-store = list(reversed(string1))
-print(store)
+store = reversed(string1)
+print(type(store))
 output = "".join(store)
 print(output)

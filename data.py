@@ -6,15 +6,18 @@ You can return the answer in any order.'''
 '''plan
     -- first loop through the list and find the sum that equals to the target value
     -- we can define the functions to find these'''
-
-def main(list,target):
-    for i in list:
-        for j in range(1,len(list)):
-            foundElement = i + list[j]
-            if foundElement == target:
-                return list.index(i), j
-k = main(list = [2,6,8,9],target=int(input("Enter the target sum element :")))
-if k is not None:
-    print(f"the target sum pair is found in pair of index {k}")
+    
+digits = [9]
+length = len(digits)-1
+old = digits[length]
+new = digits[length] + 1
+digits.remove(old)
+if new > 9:
+    stry = str(new)
+    stry = stry.replace(""," ").split()
+    for i in stry:
+        i = int(i)
+        digits.append(i)
 else:
-    print("target is not found")
+    digits.append(new)
+print(digits)
