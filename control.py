@@ -19,7 +19,7 @@ else:
     '''
 l1 = [3,4,5]
 num = 0
-d = (sorted(l1,reverse = True))
+d = list(reversed(l1))
+print(d)
 for i in d:
-    oo = len(d) 
-print(oo)
+    print(i)

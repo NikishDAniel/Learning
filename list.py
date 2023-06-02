@@ -9,3 +9,4 @@ def replace(list,value1,value2):
     list.insert(index2,value1)
     return list
 '''output = replace(list = input(),value1=input(),value2=input())'''
+
