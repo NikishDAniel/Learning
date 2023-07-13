@@ -1,2 +1,9 @@
-from list import *
-print(replace([1,2,3,4,5],1,5))
+'''checking whether the number is prime or not'''
+def checkPrime(number):
+    for i in range(2,number+1):
+        if number%i == 0:
+            break
+        else:
+            return True
+    
+number = int(input('Enter'))
